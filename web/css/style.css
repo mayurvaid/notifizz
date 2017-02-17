@@ -1,0 +1,361 @@
+/* CSS reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {
+    margin: 0;
+    padding: 0;
+}
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+fieldset,
+img {
+    border: 0;
+}
+input {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(210, 210, 210);
+    box-shadow: none;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    border-radius: 3px;
+    font-weight: bold;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    color: rgb(51, 51, 51);
+}
+a {
+    text-decoration: none;
+	color:#fff;
+}
+ol,
+ul {
+    list-style: none;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+	font-size:1em;
+}
+/* CSS reset */
+.ui-page{
+	position:relative;
+	height:100%;
+}
+header {
+    background-color: #003a50 ;
+    padding: 10px;
+    display: flex;
+    width: 100%;
+    position: fixed;
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+    z-index: 101;
+}
+.logo{
+	width:25%;	
+}
+.logo img{
+	width: 70px;
+    margin-top: 10px;
+}
+.pageHead{
+	font-family: 'Mystery Quest', cursive;
+	font-size: 50px;
+	color:#fff;
+	width: 60%;
+    margin-top: 15px;
+}
+footer .pageHead{
+	font-size: 34px;
+	margin-left:20px;
+    margin-top: 0;
+	padding-top: 2%;
+}
+.menuBar{
+	margin-top: 2.6%;
+	position: absolute;
+    right: 15px;
+}
+.w-button {
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    margin: 0 5px;
+    font-size: 14px;
+	box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.14);
+	border-radius: 4px;
+}
+.w-button.but-1 {
+    border: 1px solid #67c1ea;
+    background-color: #67c1ea;
+    color: #fff;
+}
+.w-button.but-2 {
+    border: 1px solid #67c1ea;
+    background-color: #fff;
+	color:#67c1ea;
+}
+footer {
+    background-color: #325766;
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+footer .wrapper{
+	color:#fff;
+	position:relative;
+}
+footer .wrapper .logo img{
+	width:50px;
+	margin-left:20px;	
+	margin-top:28px;	
+}
+footer .content{
+	position: absolute;
+    left: 25%;
+    top: 30px;
+}
+footer .contact a{
+	margin: 0 0 10px 30px;
+    display: block;
+}
+.ws-socail-content{
+	position: absolute;
+    right: 10%;
+    top: 30px;
+}
+.ws-socail-content li{
+	float:left;
+	width:30px;
+	margin: 0 10px;
+}
+#howItWorks{
+	padding-top: 125px;
+	text-align:center;
+    padding-bottom: 20%;
+}
+#howItWorks .heading{
+	padding-bottom: 35px;
+}
+#howItWorks .stepTitle {
+    width: 60%;
+    margin: 10px auto;
+}
+#howItWorks li{
+	display: inline-block;
+    width: 35%;
+	margin-bottom: 25px;
+}
+#howItWorks img{
+	width:120px;
+}
+.getStarted{
+	margin-top: 4%;
+    display: inline-block;
+}
+
+/* jquery mobile */
+.ui-loader{
+	display:none;
+}
+
+/* helper */
+
+.floatLeft{
+	float:left;
+}
+
+/* responsive css*/
+@media screen and (max-device-width: 736px) and (min-device-width: 320px) {
+   body {
+		font-size:2.2em;
+   }
+   footer {
+		height: 150px;
+  }
+  footer .content {
+    font-size: 0.7em;
+  }
+  .ws-socail-content .svg-icon{
+	  height:50px;
+  }
+  #howItWorks li{
+    width: 100%;
+ }
+}
+
+form div{
+    text-align: left;
+}
+form label.error{
+    text-align: left;
+    font-size: 12px;
+    z-index: 9999;
+    border-radius: 5px;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+/* overlay */
+
+.w-modal,
+.w-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    z-index: 9999;
+    display: none;
+    top: 100%;
+}
+.w-backdrop {
+    background: rgba(0, 0, 0, 0.7);
+}
+.w-modal-container {
+    width: 400px;
+    height: auto;
+    background: #F3F3F3;
+    position: absolute;
+    z-index: 9999;
+    border-radius: 5px;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.w-modal .closeIcon {
+    position: absolute;
+    right: 8px;
+    top: 5px;
+    color: #888;
+	font-size: 24px;
+}
+.w-modal .w-modal-header {
+    padding-top: 25px;
+    width: 100%;
+    text-align: center;
+}
+.w-modal .w-modal-header img {
+    width: 55px;
+}
+.w-modal .w-modal-body {
+    padding: 10px 20px;
+}
+.w-modal h2 {
+    margin: 0 auto;
+    text-align: center;
+    color: #254;
+    padding: 5px;
+}
+.w-modal a{
+	color:#000;
+}
+.form-input {
+    margin: 10px;
+	text-align: center;
+}
+.form-button {
+    margin: 15px auto;
+    text-align: center;
+}
+.form-input input {
+    display: block;
+    margin-bottom: 3px;
+}
+.showOptions {
+    margin-left: 2%;
+    padding: 10px;
+}
+.showOptions a {
+	font-weight:bold;
+    margin-left: 5px;
+}
+.otherSignIn {
+	text-align:center;
+}
+.otherSignIn a{
+	padding: 5px 5px;
+    border-radius: 4px;
+    color: #fff;
+    width: 275px;
+    display: inline-block;
+    text-align: left;
+}
+.otherSignIn .otherIcon{
+	width: 30px;
+    height: 30px;
+    padding: 3px;
+    float: left;
+    margin-right: 26px;
+}
+.otherSignIn div{
+	margin:10px;
+}
+.otherSignIn a .otherTxt{
+	margin-top: 5px;
+    display: inline-block;
+}
+.otherSignIn .facebook{
+    background-color: #4267b2;
+}
+.otherSignIn .google{
+    background-color: #4285F4;
+}
+.otherSignIn .google .otherIcon{
+	background-color:#fff;
+}
+@media screen and (max-device-width: 736px) and (min-device-width: 320px) {
+	 body {
+		font-size:2.2em;
+	   }
+	.w-modal-container {
+		width: 90%;
+		height: 95%;
+		overflow: scroll;
+	}
+	.w-modal .w-modal-header img {
+		width: 175px;
+	}
+	.otherSignIn .otherIcon{
+		width: 50px;
+		height: 50px;
+	}
+	.form-input input {
+		width: 90%;
+		font-size: 38px;
+		padding: 20px;
+		margin:10px auto;
+		display:inline-block;
+	}
+	.otherSignIn a{
+		width: 70%;
+		padding: 20px;
+	}
+	.w-button{
+		font-size:36px;
+		margin: 10px;
+	}
+	.w-modal .closeIcon {
+		font-size: 50px;
+	}
+	.w-modal h2 {
+		font-size:34px;
+	}
+}
