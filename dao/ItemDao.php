@@ -22,7 +22,6 @@
 		            'itemDescription' => $item->itemDescription,
 		            'itemImage' => $item->itemImage,
 		            'itemURL' => $item->itemURL,
-		            'categoryId' => $item->categoryId,
 		            'itemPrice' => $item->itemPrice,
 		            'notificationList' => $item->notificationList,
 		            'emailId' => $item->emailId
@@ -32,7 +31,7 @@
 		    	http_response_code(500);
 		    	header('Content-Type: application/json');
 
-		    	$error = new Error("1000","An error occurred while creating user");
+		    	$error = new Error("1000","An error occurred while aadding the item");
 
 		    	return json_encode($error);
 		    }

@@ -10,6 +10,7 @@
 	
 		public function addItemToNotificationList(){
 	    	$entityBody = file_get_contents('php://input');
+	    	echo $entityBody;
 			$data = json_decode($entityBody);
 			$item = new Item();
 			foreach ($data as $key => $value){
