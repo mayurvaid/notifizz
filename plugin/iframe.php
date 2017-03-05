@@ -323,8 +323,7 @@ function getItems(){
 				debugger;
 
 
-				console.log($("#windowlocation").val());
-     			console.log(data);
+				console.log(parenturl);
 			});
 
 		});
