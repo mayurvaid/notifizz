@@ -8,10 +8,13 @@
 var url = (window.location != window.parent.location)
             ? document.referrer
             : document.location.href;
+
+var parenturl = "";
 var melem = null;
 window.onmessage = function(e) {
-
+debugger;
   melem = $(e.data);
+parenturl = melem.find("#windowlocation").val();
   getItems();
 };
 
@@ -20,7 +23,7 @@ function imgClick(elem){
 	debugger;
 	$(".img-list ul li").removeClass('selected');
 	$(".img-container .item-image img").attr("src",$(elem).find('img').attr('src'));
-	$(".img-container .item-desc").html($(elem).find('a').attr('title'));
+	$(".img-container .item-desc").html($(elem).attr('title'));
 	$(elem).addClass("selected");
 }
 
@@ -74,6 +77,7 @@ function getItems(){
             $("#product_list").html(html);
     })
 
+	$("#product_list").find("a")[0].click()
 
 }
 </script>
@@ -254,7 +258,7 @@ function getItems(){
 			 </ul>
 		 </div>
 		 <div class="img-container">
-			<div class="item-image"><img src="http://ecx.images-amazon.com/images/I/41xEPXEOx6L._AC_US160_FMwebp_QL70_.jpg" alt=""></div>
+			<div class="item-image"><img src="" alt=""></div>
 			<div class="item-desc">a-size-medium a-color-null s-inline  s-access-title  color-variation-title-replacement a-text-normal</div>
 		 </div>
 		 <div class="notify-options">
@@ -267,27 +271,27 @@ function getItems(){
 				</div>
 				<input type="text" class="inputFld" style="display:none;" name="priceFld" id="priceFld" placeholder="enter price">
 				<div class="form-checkbox">
-					<input type="checkbox" name="notificationList" value="exchangeOffer" id="exchangeOffer">
+					<input type="checkbox" name="exchangeOffer" id="exchangeOffer">
 					<label for="exchangeOffer">On Exchange Offer</label>
 					<span class="help">?</span>
 				</div>
 				<div class="form-checkbox">
-					<input type="checkbox" name="notificationList" value="inStock" id="inStock">
+					<input type="checkbox" name="inStock" id="inStock">
 					<label for="inStock">Back in-stock</label>
 					<span class="help">?</span>
 				</div>
 				<div class="form-checkbox">
-					<input type="checkbox" name="notificationList" value="additionalDesc" id="additionalDesc">
+					<input type="checkbox" name="additionalDesc" id="additionalDesc">
 					<label for="additionalDesc">Additional discounts</label>
 					<span class="help">?</span>
 				</div>
 				<div class="form-checkbox">
-					<input type="checkbox" name="notificationList" value="dialyDeal" id="dialyDeal">
+					<input type="checkbox" name="dialyDeal" id="dialyDeal">
 					<label for="dialyDeal">On Daily Deal</label>
 					<span class="help">?</span>
 				</div>
 				<div class="form-checkbox">
-					<input type="checkbox" name="notificationList" value="lighteningDeal" id="lighteningDeal">
+					<input type="checkbox" name="lighteningDeal" id="lighteningDeal">
 					<label for="lighteningDeal">On Lightening Deal</label>
 					<span class="help">?</span>
 				</div>
@@ -299,7 +303,7 @@ function getItems(){
 						<label for="emailRemember">Remember this email address</label>
 					</div>
 				</div>
-				<button type="button" id="notifySave">save</button>
+				<button type="submit" id="notifySave">save</button>
 			</form>
 		 </div>
 		</div>
@@ -312,31 +316,21 @@ function getItems(){
 			$("#priceDown").on('click',function(){
 				$(this).prop('checked') ? $("#priceFld").show() : $("#priceFld").hide();
 			});
-		});
 
-		$("#notifySave").click(function(){
-			var valuesArray = $('input:checkbox:checked').map( function() {
-			    return this.value;
-			}).get().join(",");
+			$('#notifyInfoForm').submit(function(elem){
+				var data = $(this).serialize();
+					data += "&url="+encodeURIComponent(url);
+				debugger;
 
-			var data = {
-				"itemDescription" : $(".item-desc").html(),
-				"itemImage" : $(".item-image").find("img").attr("src"),
-				"itemURL" : "http://www.google.com",
-				"itemPrice" : $("#priceFld").val(),
-				"emailId" : $("#notifyEmail").val(),
-				"notificationList" : valuesArray
-			};
-			$.ajax({
-			  type: "POST",
-			  url: 'http://localhost/notifiz/item.php?action=addItem',
-			  dataType: 'json',
-			  data: JSON.stringify(data),
-			  success: function(data){
-			  	alert(data);
-			  }
+
+				console.log($("#windowlocation").val());
+     			console.log(data);
 			});
+
 		});
+
+		
+
 	</script>
 	<img src="#" id="width_check" style="visibility:hidden">
 	
